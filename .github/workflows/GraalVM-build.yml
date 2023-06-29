@@ -18,11 +18,10 @@ jobs:
           native-image-job-reports: 'true'
 
       - name: Build and run WhatTheZooBackend.java
-        run: | 
+        run: |
           ./gradlew nativeCompile
-          ls build/native/nativeCompile/what-the-zoo-backend
       - name: Upload binary
         uses: actions/upload-artifact@v2
         with:
-          name: helloworld-${{ matrix.os }}
-          path: helloworld*
+          name: what-the-zoo-backend-${{ matrix.os }}
+          path: build/native/nativeCompile/what-the-zoo-backend*
